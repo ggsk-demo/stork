@@ -13,7 +13,7 @@ require (
 	github.com/Azure/go-autorest/autorest/to v0.4.0
 	github.com/LINBIT/golinstor v0.27.0
 	github.com/aquilax/truncate v1.0.0
-	github.com/aws/aws-sdk-go v1.44.45
+	github.com/aws/aws-sdk-go v1.44.123
 	github.com/go-openapi/inflect v0.19.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/go-version v1.2.1

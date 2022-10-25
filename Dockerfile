@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8-minimal:latest
+FROM ubuntu:20.04
 MAINTAINER Portworx Inc. <support@portworx.com>
 
 ARG VERSION=master

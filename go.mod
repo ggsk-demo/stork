@@ -3,8 +3,8 @@ module github.com/libopenstorage/stork
 go 1.15
 
 require (
-	cloud.google.com/go v0.65.0
-	cloud.google.com/go/storage v1.10.0
+	cloud.google.com/go/compute v1.10.0
+	cloud.google.com/go/storage v1.23.0
 	github.com/Azure/azure-pipeline-go v0.2.2
 	github.com/Azure/azure-sdk-for-go v43.0.0+incompatible
 	github.com/Azure/azure-storage-blob-go v0.9.0
@@ -40,9 +40,9 @@ require (
 	github.com/urfave/cli v1.22.2
 	github.com/zoido/yag-config v0.4.0
 	gocloud.dev v0.20.0
-	golang.org/x/oauth2 v0.0.0-20220309155454-6242fa91716a
-	google.golang.org/api v0.30.0
-	google.golang.org/grpc v1.48.0
+	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783
+	google.golang.org/api v0.100.0
+	google.golang.org/grpc v1.50.1
 	google.golang.org/grpc/examples v0.0.0-20220715232852-f601dfac73c9 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 	gopkg.in/yaml.v3 v3.0.1 // indirect

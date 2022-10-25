@@ -11,6 +11,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/gorilla/mux"
 	stork_driver "github.com/libopenstorage/stork/drivers"
 	"github.com/libopenstorage/stork/drivers/volume"
 	_ "github.com/libopenstorage/stork/drivers/volume/aws"
@@ -48,6 +49,7 @@ import (
 	schedops "github.com/portworx/sched-ops/k8s/core"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	log "github.com/sirupsen/logrus"
+	swagger "github.com/swaggo/http-swagger"
 	"github.com/urfave/cli"
 	api_v1 "k8s.io/api/core/v1"
 	k8s_errors "k8s.io/apimachinery/pkg/api/errors"
@@ -524,6 +526,15 @@ func runStork(mgr manager.Manager, d volume.Driver, recorder record.EventRecorde
 		}
 	}
 	ctx := context.Background()
+
+	r := mux.NewRouter()
+	r.PathPrefix("/swagger/").Handler(swagger.Handler(
+		swagger.URL(":1323/swagger/doc.json"), //The url pointing to API definition
+		swagger.DeepLinking(true),
+		swagger.DocExpansion("none"),
+		swagger.DomID("#swagger-ui"),
+	)).Methods(http.MethodGet)
+	go http.ListenAndServe("/", r)
 
 	go func() {
 		for {
